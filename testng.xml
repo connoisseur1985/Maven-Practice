@@ -3,6 +3,7 @@
 <suite name="Suite">
 <listeners>
 <listener class-name="com.qa.util.AnnotationTransformer" ></listener>
+<listener class-name="com.qa.util.TestListener"></listener>
 </listeners>
   <test thread-count="5" name="Test">
     <classes>

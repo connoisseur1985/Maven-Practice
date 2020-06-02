@@ -48,14 +48,14 @@ public class HomePageTest extends TestBase {
 		
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void verifyHomePageTitle() {
 		
 		Assert.assertEquals(driver.getTitle(), "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
 		System.out.println(driver.findElement(By.linkText("Mobiles")).getText());
 	}
 	
-	@Test(enabled=false)
+	@Test(enabled=true)
 	public void verifyMobilesLink() {
 		
 		mobilesPage = homePage.clickOnMobilesLink();
@@ -67,7 +67,7 @@ public class HomePageTest extends TestBase {
 		Assert.assertEquals(w.getText(), "Mobiles & Accessories");
 	}
 	
-	@Test(dataProvider="getExcelData")
+	@Test(dataProvider="getExcelData", enabled=true)
 	public void verifySearchText(String value) throws AWTException, IOException {
 		
 		searchResultPage = homePage.enterValuesInSearchText(value);

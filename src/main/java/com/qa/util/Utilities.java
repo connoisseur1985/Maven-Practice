@@ -1,13 +1,21 @@
 package com.qa.util;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
+import org.apache.commons.io.FileUtils;
+import org.apache.commons.lang.RandomStringUtils;
 import org.apache.poi.hssf.usermodel.HSSFSheet;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebDriverException;
+
 import com.qa.base.TestBase;
 
 public class Utilities extends TestBase{
@@ -40,4 +48,11 @@ public class Utilities extends TestBase{
 		
 	}
 
+	public static String getScreenShot(WebDriver driver) throws WebDriverException, IOException {
+		String screenshotPath = System.getProperty("user.dir")+"\\src\\main\\java\\com\\qa\\screenshots"+RandomStringUtils.randomAlphanumeric(4)+".png";
+		FileUtils.copyFile(((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE), new File(screenshotPath));
+		
+		return screenshotPath;
+		
+	}
 }
