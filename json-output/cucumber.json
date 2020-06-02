@@ -1,0 +1,91 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "line": 13,
+        "name": "Home Page check",
+        "description": "",
+        "id": "to-check-homepage-functionality;home-page-check;;2",
+        "type": "scenario",
+        "keyword": "Scenario Outline",
+        "steps": [
+          {
+            "result": {
+              "duration": 7209678894,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "user opens the browser",
+            "match": {
+              "location": "HomePage.user_opens_browser()"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 8612511407,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user enters \"https://www.amazon.in\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.amazon.in",
+                  "offset": 13
+                }
+              ],
+              "location": "HomePage.user_enters_url(String)"
+            },
+            "matchedColumns": [
+              0
+            ],
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 11693834719,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user clicks on enter",
+            "match": {
+              "location": "HomePage.user_clicks_on_enter()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 330321214,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "home page is opened",
+            "match": {
+              "location": "HomePage.home_page_is_opened()"
+            },
+            "keyword": "Then "
+          },
+          {
+            "result": {
+              "duration": 111373309,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "user validates home page",
+            "match": {
+              "location": "HomePage.user_validates_home_page()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "To check homepage functionality",
+    "description": "",
+    "id": "to-check-homepage-functionality",
+    "keyword": "Feature",
+    "uri": "C:/Users/Dell/eclipse-workspace/MavenPractice/src/test/java/features/HomePage.feature"
+  }
+]

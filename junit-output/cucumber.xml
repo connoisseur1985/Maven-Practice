@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="0" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="27.95772">
+<testcase classname="To check homepage functionality" name="Home Page check" time="27.95772">
+<system-out><![CDATA[Given user opens the browser................................................passed
+When user enters "https://www.amazon.in"....................................passed
+Then user clicks on enter...................................................passed
+Then home page is opened....................................................passed
+Then user validates home page...............................................passed
+]]></system-out>
+</testcase>
+</testsuite>
