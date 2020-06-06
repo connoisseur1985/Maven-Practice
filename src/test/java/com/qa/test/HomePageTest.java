@@ -48,20 +48,20 @@ public class HomePageTest extends TestBase {
 		
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void verifyHomePageTitle() {
 		
 		Assert.assertEquals(driver.getTitle(), "Online Shopping site in India: Shop Online for Mobiles, Books, Watches, Shoes and More - Amazon.in");
 		System.out.println(driver.findElement(By.linkText("Mobiles")).getText());
 	}
 	
-	@Test(enabled=true)
+	@Test(enabled=false)
 	public void verifyMobilesLink() {
 		
 		mobilesPage = homePage.clickOnMobilesLink();
 	
 		WebElement w = driver.findElement(By.partialLinkText("Mobiles & Accessories"));
-		WebDriverWait wait = new WebDriverWait(driver,20);
+		WebDriverWait wait = new WebDriverWait(driver,TIMEOUT);
 		wait.until(ExpectedConditions.visibilityOf(w));
 		
 		Assert.assertEquals(w.getText(), "Mobiles & Accessories");
@@ -72,9 +72,6 @@ public class HomePageTest extends TestBase {
 		
 		searchResultPage = homePage.enterValuesInSearchText(value);
 		
-		WebDriverWait wait = new WebDriverWait(driver,20);
-		wait.until(ExpectedConditions.visibilityOf(searchResultPage.isSearchResultDisplayed()));
-		
 		List<String> list = searchResultPage.getSearchResults();
 		for(String str : list) {
 			
@@ -83,7 +80,7 @@ public class HomePageTest extends TestBase {
 		
 	}
 	@AfterMethod
-	public void tearDown() {
+	public void tearDown() { 
 		
 		driver.quit();
 		

@@ -6,7 +6,7 @@
       <class name="com.qa.test.HomePageTest">
         <methods>
           <include name="setUp"/>
-          <include name="verifySearchText"/>
+          <include name="verifySearchText" invocation-numbers="0 1 2 3"/>
           <include name="tearDown"/>
         </methods>
       </class> <!-- com.qa.test.HomePageTest -->

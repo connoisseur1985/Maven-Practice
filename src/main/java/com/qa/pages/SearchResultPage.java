@@ -5,9 +5,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.qa.base.TestBase;
 
@@ -22,30 +25,38 @@ public class SearchResultPage extends TestBase{
 	WebElement resultText;
 	@FindBy(xpath="//span[@data-component-type='s-search-results']/div[2]/div/div/span/div/div/div[2]/div[2]/div/div/div/div/div/h2/a/span")
 	List<WebElement> searchResults;
-	@FindBy(xpath="//li[@class='a-last']")
+	@FindBy(xpath="//a[text()='Next']")
 	WebElement nextButton;
 	@FindBy(xpath="//li[@class='a-disabled a-last']")
 	WebElement nextButtonNotDisplayed;
 	
 	public List<String> getSearchResults() {
+		
 		List<String> list = new ArrayList<String>();
 		for(WebElement w : searchResults) {
 			
 			list.add(w.getText());
 		}
-		while(true) {
-		if(nextButton.isDisplayed()) {
-			
+		while(true){
+			try {
+
+			WebDriverWait wait = new WebDriverWait(driver,TIMEOUT);	
+			wait.until(ExpectedConditions.visibilityOf(nextButton));
 			nextButton.click();
-			list = new ArrayList<String>();
-			for(WebElement w : searchResults) {
+			//list = new ArrayList<String>();
+			for(WebElement w : searchResults) 
+			{
 				
-				list.add(w.getText());
-				}
-		}else if(nextButtonNotDisplayed.isDisplayed())
+			list.add(w.getText());
+			}
+				
+		}catch(Exception e) {
+			
 			break;
+			}
 		}
-		return list;
+			
+			return list;
 	}
 	public WebElement isSearchResultDisplayed() {
 		

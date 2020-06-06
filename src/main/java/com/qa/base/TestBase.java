@@ -15,7 +15,7 @@ public class TestBase {
 	public static WebDriver driver;
 	public static FileInputStream fin;
 	public static Properties prop;
-	
+	public static int TIMEOUT = 5;
 	public TestBase() throws IOException {
 		
 		fin = new FileInputStream(System.getProperty("user.dir")+"\\src\\main\\java\\com\\qa\\config\\config.properties");
